@@ -2,6 +2,8 @@
 
 A static scanner that catches internal information leaking into documents before they ship: secret-shaped strings, credentialed database URLs, private-range IPs, internal hostnames, non-allowlisted emails, and optional customer-name mentions. Strictly offline — it opens only the files you pass it. Pure standard library, single file. *No direct equivalent found as of 2026-10-13.*
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Runbooks, postmortems, and RFC drafts routinely quote the internal reality — `postgres://admin:hunter2@db.internal`, the staging IP, the customer that filed the incident — because that is what makes them useful. Then they get pasted into a public repo or a shared doc export. Existing secret scanners target source code and git history; they do not cover prose documents, internal hostnames, or "we named the customer three times in this incident review".
